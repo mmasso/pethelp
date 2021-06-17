@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ngAuthService: AuthService) { }
+
+  isLoggedIn = false;
 
   ngOnInit(): void {
+    this.isLoggedIn = this.ngAuthService.isLoggedIn;
   }
 
 }
