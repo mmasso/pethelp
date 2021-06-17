@@ -1,0 +1,73 @@
+.titles{
+    display: none;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #1b3039;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper img{
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+a:hover {
+    color: #fbc02d;
+}
+
+.active{
+    color: #fbc02d;
+}
+
+a {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.side-menu{
+    width: 60px;
+    height: 100vh;
+    transition: width 1s;
+}
+
+#home {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.side-menu:hover{
+    width: 200px;
+
+    .mat-toolbar-row{
+        height: 100%;
+        min-height: 56px ;
+    }
+    
+    .titles{
+        display: inline;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        animation: 
+          typing 1.5s steps(40, end),
+    }
+    #home span, #login span , #dogs span  {
+        margin-left: 1em;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
