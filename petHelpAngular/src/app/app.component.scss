@@ -1,0 +1,37 @@
+.row-app{
+    display: flex;
+    flex-flow: nowrap row;
+}
+
+.column-menu{
+    width: 60px;
+    height: 100vh;
+    transition: width 1s;
+    margin-right: 20px;
+}
+
+.column-menu:hover{
+    width: 200px;
+    .titles{
+        display: inline;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        animation: 
+          typing 1.5s steps(40, end),
+    }
+    #home span, #login span , #dogs span  {
+        margin-left: 1em;
+    }
+    
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.column-body{ 
+    width: 100%;
+}
