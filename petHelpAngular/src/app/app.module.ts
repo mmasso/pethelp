@@ -23,6 +23,15 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './views/home/home.component';
 import { AlertsComponent } from './views/alerts/alerts.component';
 import { CreatePostComponent } from './views/create-post/create-post.component';
+import { LoginComponent } from './views/login/login.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+
+import { AuthService } from "./service/auth/auth.service";
+
 
 @NgModule({
   declarations: [
@@ -34,6 +43,11 @@ import { CreatePostComponent } from './views/create-post/create-post.component';
     HomeComponent,
     AlertsComponent,
     CreatePostComponent,
+    LoginComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +55,10 @@ import { CreatePostComponent } from './views/create-post/create-post.component';
     MatIconModule,
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
