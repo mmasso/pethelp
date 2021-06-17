@@ -20,6 +20,9 @@ import { TestComponent } from './test/test.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './views/home/home.component';
+import { AlertsComponent } from './views/alerts/alerts.component';
+import { CreatePostComponent } from './views/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     SideMenuComponent,
     FooterComponent,
     ProfileComponent,
+    HomeComponent,
+    AlertsComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
