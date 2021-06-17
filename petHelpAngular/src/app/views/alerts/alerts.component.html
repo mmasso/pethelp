@@ -1,1 +1,8 @@
-<p>alerts works!</p>
+<div class="container">
+    <ul *ngFor='let doc in myDoc'>
+        <li><strong>{{doc.key}}</strong></li>
+        <li *ngFor='let ent in doc.value'>
+            {{ent.value}}
+        </li>
+    </ul>
+</div>
