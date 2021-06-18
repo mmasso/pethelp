@@ -14,6 +14,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Import de las enviroment de firebase
 import { environment } from 'src/environments/environment'
 
+// Import Forms reactive
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
@@ -31,6 +34,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 
 
 import { AuthService } from "./service/auth/auth.service";
+import { FirestoreService } from './service/firestore/firestore.service';
 
 
 @NgModule({
@@ -50,6 +54,8 @@ import { AuthService } from "./service/auth/auth.service";
     VerifyEmailComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
@@ -58,7 +64,7 @@ import { AuthService } from "./service/auth/auth.service";
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
