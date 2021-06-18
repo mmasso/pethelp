@@ -1,8 +1,15 @@
 <div class="container">
-    <ul *ngFor='let doc in myDoc'>
-        <li><strong>{{doc.key}}</strong></li>
-        <li *ngFor='let ent in doc.value'>
-            {{ent.value}}
-        </li>
-    </ul>
+
+
+<div> <h2>Lista de animales perdidos</h2> </div>
+<div *ngFor="let pet of myPetAdvises">
+    <div class="title"><h3>Name :{{pet.data.name}}</h3></div>
+    <div class="body">Age: {{pet.data.age}}</div>
+    <div class="body mb-5">Description: {{pet.data.description}}</div>
+</div>
+
+
+<a routerLink="/alerts/createAlert">
+    <button type="button" class="btn btn-primary">Create Advise</button>
+</a>
 </div>

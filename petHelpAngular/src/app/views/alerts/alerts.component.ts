@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/service/firestore/firestore.service';
+
 
 @Component({
   selector: 'app-alerts',
@@ -8,20 +9,22 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AlertsComponent implements OnInit {
 
-  myDoc: any;
+  myPetAdvises= [] as any;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(fireStore: FirestoreService) {
+    fireStore.getAllPetAdvise().subscribe((advises) => {
+      this.myPetAdvises = [];
+      advises.forEach((document: any) => {
+        this.myPetAdvises.push({
+          id: document.payload.doc.id,
+          data: document.payload.doc.data()
+        })
+      })
+    })
+  }
 
+  
   ngOnInit(): void {
-    this.firestore
-    .collection("pets")
-    .get()
-    .subscribe((ss) => {
-      ss.docs.forEach((doc) => {
-        this.myDoc = doc.data();
-      });
-    });
-    console.log(this.myDoc)
   }
 
 }
