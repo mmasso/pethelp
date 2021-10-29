@@ -1,0 +1,23 @@
+<div class="displayTable">
+    <div class="displayTableCell p-5">
+      <div class="authBlock" *ngFor="let pet of myPetAdvises;">
+        <div class="containerGrid">
+            <div class="aaa">
+                <img class="imgPet" [src]="pet.data.image" alt="">
+            </div>
+            <div class="bbb">
+
+                <h2>{{pet.data.name}}</h2>
+
+                <ul>
+                    <li>Name: {{pet.data.name}}</li>
+                    <li>Animal: {{pet.data.animalType}}</li>
+                    <li>Breed: {{pet.data.breed}}</li>
+                    <li>Contact: {{pet.data.contact}}</li>
+                </ul>
+                
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { waitForAsync } from '@angular/core/testing';
 
 export interface User {
     uid: string;
@@ -41,7 +42,9 @@ export class AuthService {
       return this.afAuth.signInWithEmailAndPassword(email, password)
         .then((result) => {
           this.ngZone.run(() => {
-            this.router.navigate(['profile']);
+            this.router.navigate(['profile']).then(() => {
+              window.location.reload();
+            });
           });
           this.SetUserData(result.user);
         }).catch((error) => {
@@ -81,7 +84,15 @@ export class AuthService {
     }
   
     GoogleAuth() {
-      return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
+        this.AuthLogin(new firebase.auth.GoogleAuthProvider()).then(
+          () => {
+            this.router.navigate(['profile']).then(
+              () => {
+                window.location.reload();
+              }
+            )
+          }
+        );
     }
   
     AuthLogin(provider: firebase.auth.AuthProvider) {
@@ -113,7 +124,10 @@ export class AuthService {
     SignOut() {
       return this.afAuth.signOut().then(() => {
         localStorage.removeItem('user');
-        this.router.navigate(['sign-in']);
+        this.router.navigate(['sign-in'])
+          .then(() => {
+            window.location.reload();
+          });
       })
     }  
 }

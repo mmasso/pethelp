@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { FirestoreService } from 'src/app/service/firestore/firestore.service';
 import { PetAdvise } from '../../models/pet-advise';
@@ -27,7 +30,38 @@ export class CreatePostComponent implements OnInit {
     size: new FormControl('')
   });
 
-  constructor(public ngAuthService: AuthService, public firestoreService: FirestoreService,  private formBuilder: FormBuilder) { 
+  constructor(public ngAuthService: AuthService, public firestoreService: FirestoreService, private storage: AngularFireStorage,  private formBuilder: FormBuilder) { 
+  }
+
+  selectedFile: File | undefined;
+  fb:any;
+  downloadURL: Observable<string> | undefined;
+
+  //image service post and url remirar
+  onFileSelected(event:any) {
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `PetsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`PetsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+            }
+            console.log(this.fb);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
   }
 
   ngOnInit(): void {
@@ -42,7 +76,8 @@ export class CreatePostComponent implements OnInit {
     this.petAdvise.contact = this.petAdviseForm.get('contact')?.value
     this.petAdvise.description = this.petAdviseForm.get('description')?.value
     this.petAdvise.gender = this.petAdviseForm.get('gender')?.value
-    this.petAdvise.image = this.petAdviseForm.get('image')?.value
+    //image service post and url remirar
+    this.petAdvise.image = this.fb
     this.petAdvise.location = this.petAdviseForm.get('location')?.value
     this.petAdvise.size = this.petAdviseForm.get('size')?.value
     this.petAdvise.owner = JSON.parse(localStorage.getItem('user') || '{}').email

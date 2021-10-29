@@ -31,11 +31,15 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { CarrouselComponent} from './components/carrousel/carrousel.component'
 
 
 import { AuthService } from "./service/auth/auth.service";
 import { FirestoreService } from './service/firestore/firestore.service';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+//import { AgmCoreModule } from '@agm/core';
+import { PetComponent } from './components/pet/pet.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,8 @@ import { FirestoreService } from './service/firestore/firestore.service';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    CarrouselComponent,
+    PetComponent
   ],
   imports: [
     FormsModule,
@@ -62,9 +68,14 @@ import { FirestoreService } from './service/firestore/firestore.service';
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgbModule,
+    MDBBootstrapModule.forRoot()
+ ///   AgmCoreModule.forRoot({
+ ///     apiKey: 'AIzaSyBUZaybfOzGwAlv_R9JOLp8CHMr0r2IZBY'
+ ///   })
   ],
   providers: [AuthService, FirestoreService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

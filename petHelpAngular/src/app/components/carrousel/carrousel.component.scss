@@ -1,0 +1,69 @@
+.title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    h1 {
+        font-weight: 450;
+        font-size: 2.2rem;
+    }
+    margin-bottom: 2em
+}
+
+.carousel-item {
+    &.active,
+    &.carousel-item-right,
+    &.carousel-item-next {
+        display: flex !important;
+        flex-wrap: nowrap
+    }
+}
+
+$card-width: 20vw;
+.card-body {
+    display: flex;
+    flex-flow: column;
+    align-content: space-between;
+    justify-content: space-evenly;
+    height: 15vh;
+    a{
+        width: 100px;
+        align-self: flex-end;
+    }
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card {
+    height: 40vh;
+    width: $card-width;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.404);
+}
+
+.containerCard {
+    width: auto;
+    padding: 0.5%;
+} 
+
+mdb-carousel-item {
+    justify-content: center;
+}
+
+.card-img-top {
+    height: 25vh;
+    overflow-y: hidden;
+    object-fit: cover !important;
+}
+
+.containerCarousel {
+    width: 100%;
+    margin: 0 auto;
+    //background-image: url("../../../assets/img/Switzerland_Mountains.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}

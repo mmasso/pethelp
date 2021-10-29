@@ -1,30 +1,95 @@
-<mat-toolbar color="primary" class="side-menu">
-
-    <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active">
-      <mat-toolbar-row id="home">
-        <div class="img-wrapper"><img src="../../../assets/Pet Help.png" alt=""></div>
-      </mat-toolbar-row>
-    </a>
-    
-    <a class="nav-item nav-link" routerLink="/sign-in" routerLinkActive="active" *ngIf="!isLoggedIn">
-      <mat-toolbar-row id="login">
-        <mat-icon class="account_circle" aria-hidden="false" aria-label="User Icon">account_circle</mat-icon>
-        <span class="titles">Login</span>
-      </mat-toolbar-row>
-    </a>
-
-    <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active" *ngIf="isLoggedIn">
-      <mat-toolbar-row id="login">
-        <mat-icon class="account_circle" aria-hidden="false" aria-label="User Icon">account_circle</mat-icon>
-        <span class="titles">Profile</span>
-      </mat-toolbar-row>
-    </a>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   
-    <a class="nav-item nav-link" routerLink="/alerts" routerLinkActive="active">
-      <mat-toolbar-row id="dogs"> 
-        <mat-icon class="pets" aria-hidden="false" aria-label="pets">pets</mat-icon>
-        <span class="titles">Dog care</span>
-      </mat-toolbar-row>
-    </a>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx img-wrapper icon logo_name"><img src="../../../assets/Pet Help Icon.png" alt=""></i>
+      <i class='bx bx-menu' id="btn" (click)="menuBtnChange()"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class='bx bx-search' (click)="menuBtnChange()"></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active">
+          <i class='bx bx-home' ></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a class="nav-item nav-link" routerLink="/alerts" routerLinkActive="active">
+          <i class='bx bx-map-alt'></i>
+          <span class="links_name">Pet Location</span>
+        </a>
+         <span class="tooltip">Pet Location</span>
+      </li>
+      <li>
+       <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active" *ngIf="isLoggedIn">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Profile</span>
+       </a>
+       <span class="tooltip">Profile</span>
+     </li>
+     <!--
+     <li>
+       <a class="nav-item nav-link" routerLink="/alerts" routerLinkActive="active">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     -->
 
-  </mat-toolbar>
+     <li class="profile" *ngIf="!isLoggedIn">
+      <div class="profile-details">
+        <img src="../../../assets/Pet Help Icon.png" alt="profileImg">
+        <div class="name_job">
+          <div class="name">Log in</div>
+          <div class="job">To use further options</div>
+        </div>
+      </div>
+        <i class='bx bx-log-in' id="log_out" routerLink="/sign-in"></i>
+     </li>
+
+     <li class="profile" *ngIf="ngAuthService.userState as user">
+         <div class="profile-details">
+           <img src="{{(user.photoURL) ? user.photoURL : '../../../assets/Pet Help Icon.png'}}" alt="profileImg">
+           <div class="name_job">
+             <div class="name">{{(user.displayName) ? user.displayName : 'User'}}</div>
+             <div class="job"></div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" (click)="ngAuthService.SignOut()"></i>
+     </li>
+    </ul>
+  </div>

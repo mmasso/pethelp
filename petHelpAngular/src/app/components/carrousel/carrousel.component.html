@@ -1,0 +1,27 @@
+<div class="background mt-4">
+
+    <div class="title">
+        <h1 class="text-center">
+            Have you seen this pets?
+        </h1>
+    </div>
+
+
+    <div class="containerCarousel mb-5">
+        <mdb-carousel [isControls]="false" [animation]="'slide'">
+            <mdb-carousel-item *ngFor="let pack of myPetAdvises; let i = index">
+                <div class="containerCard" *ngFor="let pet of pack; let cardIndex = index">
+                    <div class="card">
+                        <img class="card-img-top" [src]="pet.data.image" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                {{pet.data.name}}
+                            </h2>
+                            <p class="card-text">{{pet.data.description}}</p>
+                            <a [routerLink]="['/pet', pet.id]" class="btn btn-primary">+Info</a>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+        </mdb-carousel>
+    </div>

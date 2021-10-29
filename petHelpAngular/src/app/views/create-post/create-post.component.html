@@ -53,9 +53,16 @@
     </div>
     <div class="form-group row">
       <label for="image" class="col-2 col-form-label">Image</label> 
-      <div class="col-10">
-        <input id="image" formControlName="image" placeholder="To be implemented" type="text" required="required" class="form-control">
-      </div>
+        <div class="form-group col-10">
+          <input type="file"
+          id="image"
+          #userPhoto
+          (change)="onFileSelected($event)"
+          name="image"
+          autocomplete="off"
+          class="form-control"
+          />
+         </div>
     </div>
     <div class="form-group row">
       <label for="location" class="col-2 col-form-label">Location</label> 

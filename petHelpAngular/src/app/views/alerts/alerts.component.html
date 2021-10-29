@@ -5,6 +5,7 @@
 <div *ngFor="let pet of myPetAdvises">
     <div class="title"><h3>Name :{{pet.data.name}}</h3></div>
     <div class="body">Age: {{pet.data.age}}</div>
+    <div class="img"><img [src]="pet.data.image" alt="No img"></div>
     <div class="body mb-5">Description: {{pet.data.description}}</div>
 </div>
 

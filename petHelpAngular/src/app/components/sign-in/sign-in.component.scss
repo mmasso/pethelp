@@ -1,0 +1,64 @@
+.authBlock {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 9px 0 rgb(44 44 44 / 40%);
+  width: 400px;
+  margin: 0 auto;
+  padding: 80px 50px 50px;
+  position: relative;
+}
+
+.displayTableCell{
+    padding-top: 200px;
+}
+
+.formGroup {
+    margin-bottom: 10px;
+}
+
+.displayTable{
+    background-color: #E1E2E1;
+    width: 100%;
+    height: 100%;
+}
+
+.loginImage{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.loginImage img{
+    border-radius: 50%;
+    width: 160px;
+}
+
+.forgotPassword:hover, .redirect:hover{
+    cursor: pointer;
+}
+
+.redirect{
+    color: #c49000;
+}
+
+.buttonGroup{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.googleBtn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    //border: #718792 2px solid;
+    box-shadow: 3px 3px 0 rgb(44 44 44 / 40%);
+    background-color: #F2F3F5;
+}
+
+.googleBtn:hover{
+    background-color: #E1E4E7;
+}
