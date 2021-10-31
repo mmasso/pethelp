@@ -6,16 +6,16 @@
       </div>
 
       <div class="formGroup mt-4">
-        <input type="text" class="form-control" placeholder="Email" #userName required />
+        <input type="text" class="form-control" placeholder="Correo" #userName required />
       </div>
 
       <div class="formGroup">
-        <input type="password" class="form-control" placeholder="Password" #userPassword required />
+        <input type="password" class="form-control" placeholder="Contraseña" #userPassword required />
       </div>
 
       <div class="formGroup buttonGroup">
-        <input type="button" class="btn btn-primary btn-block" value="Login"
-          (click)="ngAuthService.SignIn(userName.value, userPassword.value)" />
+        <button type="button" class="btn btn-primary btn-block" value="Login"
+          (click)="ngAuthService.SignIn(userName.value, userPassword.value)" >Login</button>
 
         <button type="button" class="btn btn-block googleBtn" (click)="ngAuthService.GoogleAuth()">
           <span><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@
                 fill="#EA4335"></path>
             </svg>
           </span>
-          <span>Log in with Google</span>
+          <span> Log in with Google</span>
         </button>
       </div>
 

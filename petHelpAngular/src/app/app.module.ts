@@ -38,8 +38,12 @@ import { AuthService } from "./service/auth/auth.service";
 import { FirestoreService } from './service/firestore/firestore.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 //import { AgmCoreModule } from '@agm/core';
+import { GoogleMapsModule } from '@angular/google-maps'
+
 import { PetComponent } from './components/pet/pet.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { PetComponent } from './components/pet/pet.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     CarrouselComponent,
-    PetComponent
+    PetComponent,
+    UpdateComponent
   ],
   imports: [
     FormsModule,
@@ -70,7 +75,8 @@ import { PetComponent } from './components/pet/pet.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     NgbModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    GoogleMapsModule
  ///   AgmCoreModule.forRoot({
  ///     apiKey: 'AIzaSyBUZaybfOzGwAlv_R9JOLp8CHMr0r2IZBY'
  ///   })

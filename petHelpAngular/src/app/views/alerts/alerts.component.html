@@ -1,16 +1,34 @@
-<div class="container">
+<div class="displayTable">
+  <div class="displayTableCell p-5">
+      <h1>¿Donde se perdio mi mascota?</h1>
+    <div class="authBlock">
+      <div class="maps-desktop">
+        <google-map height="70vh" width="50vw"> </google-map>
+      </div>
+      <div class="maps-mobile">
+        <google-map height="35vh" width="70vw"> </google-map>
+      </div>
+      <div class="container-list">
+        <div><h2 style="text-align: center;">Lista de animales perdidos</h2></div>
+        <div class="list-scroll">
+          <ul *ngFor="let pet of myPetAdvises">
+            <li class="list" [routerLink]="['/pet', pet.id]">
+              <!-- Profile Section -->
+              <div class="list__profile">
+                <div class="img-list"><img [src]="pet.data.image" /></div>
+                <div class="list__label">
+                  <div class="name">{{ pet.data.name }}</div>
+                  <div class="contact">{{ pet.data.contact }}</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-
-<div> <h2>Lista de animales perdidos</h2> </div>
-<div *ngFor="let pet of myPetAdvises">
-    <div class="title"><h3>Name :{{pet.data.name}}</h3></div>
-    <div class="body">Age: {{pet.data.age}}</div>
-    <div class="img"><img [src]="pet.data.image" alt="No img"></div>
-    <div class="body mb-5">Description: {{pet.data.description}}</div>
-</div>
-
-
-<a routerLink="/alerts/createAlert">
-    <button type="button" class="btn btn-primary">Create Advise</button>
-</a>
+        <a style="float: right;"routerLink="/alerts/createAlert">
+          <button type="button" class="btn btn-primary">Crear Aviso</button>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>

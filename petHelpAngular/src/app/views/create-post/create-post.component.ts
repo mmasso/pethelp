@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { AuthService } from 'src/app/service/auth/auth.service';
@@ -30,7 +31,7 @@ export class CreatePostComponent implements OnInit {
     size: new FormControl('')
   });
 
-  constructor(public ngAuthService: AuthService, public firestoreService: FirestoreService, private storage: AngularFireStorage,  private formBuilder: FormBuilder) { 
+  constructor(public ngAuthService: AuthService, public firestoreService: FirestoreService, private storage: AngularFireStorage,  private formBuilder: FormBuilder, public router: Router,) { 
   }
 
   selectedFile: File | undefined;
@@ -68,6 +69,7 @@ export class CreatePostComponent implements OnInit {
   }
 
   onSubmit() {
+    try {
     this.petAdvise.name = this.petAdviseForm.get('animalName')?.value
     this.petAdvise.age = this.petAdviseForm.get('age')?.value
     this.petAdvise.animalType = this.petAdviseForm.get('type')?.value
@@ -77,13 +79,18 @@ export class CreatePostComponent implements OnInit {
     this.petAdvise.description = this.petAdviseForm.get('description')?.value
     this.petAdvise.gender = this.petAdviseForm.get('gender')?.value
     //image service post and url remirar
-    this.petAdvise.image = this.fb
+    this.petAdvise.image = this.fb!
     this.petAdvise.location = this.petAdviseForm.get('location')?.value
     this.petAdvise.size = this.petAdviseForm.get('size')?.value
     this.petAdvise.owner = JSON.parse(localStorage.getItem('user') || '{}').email
     console.warn(this.petAdviseForm.value)
     this.firestoreService.createPetAdvise(this.petAdvise)
     this.petAdviseForm.reset();
+    window.alert("Se han subido sus datos correctamente")
+    this.router.navigate(['Alerts'])}
+    catch{
+      window.alert("No ha satisfecho alguno de los parametros requeridos")
+    }
   }
 
 }

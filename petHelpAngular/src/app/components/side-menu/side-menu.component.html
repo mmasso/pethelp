@@ -8,8 +8,8 @@
     <ul class="nav-list">
       <li>
         <i class='bx bx-search' (click)="menuBtnChange()"></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
+         <input type="text" placeholder="Buscar...">
+         <span class="tooltip">Buscar</span>
       </li>
       <li>
         <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active">
@@ -21,16 +21,16 @@
       <li>
         <a class="nav-item nav-link" routerLink="/alerts" routerLinkActive="active">
           <i class='bx bx-map-alt'></i>
-          <span class="links_name">Pet Location</span>
+          <span class="links_name">¿Y mi mascota?</span>
         </a>
-         <span class="tooltip">Pet Location</span>
+         <span class="tooltip">¿Donde se perdio mi mascota?</span>
       </li>
       <li>
        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active" *ngIf="isLoggedIn">
          <i class='bx bx-user' ></i>
-         <span class="links_name">Profile</span>
+         <span class="links_name">Perfil</span>
        </a>
-       <span class="tooltip">Profile</span>
+       <span class="tooltip">Perfil</span>
      </li>
      <!--
      <li>

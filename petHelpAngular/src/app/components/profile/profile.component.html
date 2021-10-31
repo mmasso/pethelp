@@ -1,19 +1,48 @@
-<div class="container mt-5" style="max-width: 600px">
-
-    <div class="row" *ngIf="ngAuthService.userState as user">
-      <div class="media">
-        <img class="align-self-start mr-5 img-thumbnail rounded-circle"
-          src="{{(user.photoURL) ? user.photoURL : '/assets/dummy.jpg'}}" alt="{{user.displayName}}">
-        <div class="media-body">
-          <h2>Hi: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h2>
-          <p>User ID: <strong>{{user.uid}}</strong></p>
-          <p>Email: <strong>{{user.email}}</strong></p>
+<div class="displayTable">
+  <div class="displayTableCell p-5">
+    <div class="authBlock">
+      <div class="container mt-2" style="max-width: 600px">
+        <div class="row" *ngIf="ngAuthService.userState as user">
+          <div class="media">
+            <img
+              class="align-self-start mr-5 img-thumbnail rounded-circle"
+              src="{{ user.photoURL ? user.photoURL : '/assets/dummy.jpg' }}"
+              alt="{{ user.displayName }}"
+            />
+            <div class="media-body">
+              <h2>
+                Hola!
+                <strong>{{
+                  user.displayName ? user.displayName : "User"
+                }}</strong>
+              </h2>
+              <p>
+                Tu correo: <strong>{{ user.email }}</strong>
+              </p>
+            </div>
+          </div>
         </div>
+
+        <button class="btn btn-block btn-primary" (click)="ngAuthService.SignOut()">
+          Log out
+        </button>
       </div>
+      <div class="containerCarousel mobile mb-5">
+            <div class="rowPets" *ngFor="let pack of myPetAdvises; let i = index">
+                <div class="containerCard" *ngFor="let pet of pack; let cardIndex = index">
+                    <div class="card">
+                        <img class="card-img-top" [src]="pet.data.image" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                {{pet.data.name}}
+                            </h2>
+                            <p class="card-text">{{pet.data.description}}</p>
+                            <a [routerLink]="['/pet', pet.id]" class="btn btn-primary mb-1">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
     </div>
- 
-    <a class="btn btn-block btn-primary" (click)="ngAuthService.SignOut()">
-      Sign Out
-    </a>
- 
+    </div>
   </div>
+</div>

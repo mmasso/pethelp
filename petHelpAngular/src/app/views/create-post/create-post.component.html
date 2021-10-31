@@ -1,89 +1,101 @@
-<div class="container">
-<form [formGroup]="petAdviseForm" (ngSubmit)="onSubmit()">
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="animalName">Name</label> 
-      <div class="col-10">
-        <input id="animalName" formControlName="animalName" placeholder="Your petname" type="text" required="required" class="form-control">
+<div class="displayTable">
+  <div class="displayTableCell p-5">
+    <h1>Sube tu mascota</h1>
+    <div class="authBlock">
+
+      <div class="container">
+        <form [formGroup]="petAdviseForm" (ngSubmit)="onSubmit()">
+          <div class="form-group row">
+            <label class="col-2 col-sm-12 col-form-label" for="animalName">Nombre</label>
+            <div class="col-10">
+              <input id="animalName" formControlName="animalName" placeholder="¿Como se llama tu mascota?" type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="age" class="col-2 col-form-label">Edad</label>
+            <div class="col-10">
+              <input id="age" formControlName="age" placeholder="¿Cuantos años tiene tu mascota?" type="text" required="required"
+                class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="type" class="col-2 col-form-label">¿De que animal se trata?</label>
+            <div class="col-10">
+              <input id="type" formControlName="type" placeholder="Perro, gato, canario ..." type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="breed" class="col-2 col-form-label">Raza</label>
+            <div class="col-10">
+              <input id="breed" formControlName="breed" placeholder="La raza de tu perro (Tekel, Yorkshire, Labrador)" type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="color" class="col-2 col-form-label">Color</label>
+            <div class="col-10">
+              <input id="color" formControlName="color" placeholder="¿De que color es tu perro?" type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="contact" class="col-2 col-form-label">Contacto</label>
+            <div class="col-10">
+              <input id="contact" formControlName="contact" placeholder="Un teléfono de contacto" type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="col-2 col-form-label">Descripción</label>
+            <div class="col-10">
+              <input id="description" formControlName="description" placeholder="Describa brevemente como es su mascota" type="text"
+                required="required" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gender" class="col-2 col-form-label">Género</label>
+            <div class="col-10">
+              <select id="gender" formControlName="gender" required="required" class="custom-select" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="image" class="col-2 col-form-label">Foto</label>
+            <div class="form-group col-10">
+              <input type="file" id="image" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off"
+                class="form-control" required />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="location" class="col-2 col-form-label">Location</label>
+            <div class="col-10">
+              <input id="location" formControlName="location"
+                placeholder="Abra google maps, click izquierdo encima del mapa y copie la latitud y la longitud que obtendrá" type="text" required="required"
+                class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="size" class="col-2 col-form-label">Tamaño</label>
+            <div class="col-10">
+              <select id="size" formControlName="size" required="required" class="custom-select" required>
+                <option value="Small">Pequeño</option>
+                <option value="Medium">Mediano</option>
+                <option value="Big">Grande</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-2 col-10">
+              <button name="submit" type="submit" class="btn btn-primary">Subir!</button>
+            </div>
+          </div>
+        </form>
       </div>
+
     </div>
-    <div class="form-group row">
-      <label for="age" class="col-2 col-form-label">Age</label> 
-      <div class="col-10">
-        <input id="age" formControlName="age" placeholder="Your pet age" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="type" class="col-2 col-form-label">Animal type</label> 
-      <div class="col-10">
-        <input id="type" formControlName="type" placeholder="Dog, Cat, Tortoise ..." type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="breed" class="col-2 col-form-label">Breed</label> 
-      <div class="col-10">
-        <input id="breed" formControlName="breed" placeholder="Your animal breed (Tekel, Yorkshire)" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="color" class="col-2 col-form-label">Color</label> 
-      <div class="col-10">
-        <input id="color" formControlName="color" placeholder="Cinnamon, brown, half white and black" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="contact" class="col-2 col-form-label">Contact</label> 
-      <div class="col-10">
-        <input id="contact" formControlName="contact" placeholder="Your phone number or email" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="description" class="col-2 col-form-label">Description</label> 
-      <div class="col-10">
-        <input id="description" formControlName="description" placeholder="Your pet description" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="gender" class="col-2 col-form-label">Gender</label> 
-      <div class="col-10">
-        <select id="gender" formControlName="gender" required="required" class="custom-select">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="image" class="col-2 col-form-label">Image</label> 
-        <div class="form-group col-10">
-          <input type="file"
-          id="image"
-          #userPhoto
-          (change)="onFileSelected($event)"
-          name="image"
-          autocomplete="off"
-          class="form-control"
-          />
-         </div>
-    </div>
-    <div class="form-group row">
-      <label for="location" class="col-2 col-form-label">Location</label> 
-      <div class="col-10">
-        <input id="location" formControlName="location" placeholder="Copy and paste your the last google maps location" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="size" class="col-2 col-form-label">Size</label> 
-      <div class="col-10">
-        <select id="size" formControlName="size" required="required" class="custom-select">
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Big">Big</option>
-        </select>
-      </div>
-    </div> 
-    <div class="form-group row">
-      <div class="offset-2 col-10">
-        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </form>
+  </div>
 </div>

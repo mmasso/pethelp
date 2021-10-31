@@ -2,12 +2,12 @@
 
     <div class="title">
         <h1 class="text-center">
-            Have you seen this pets?
+            Has visto alguna de estas mascotas?
         </h1>
     </div>
 
 
-    <div class="containerCarousel mb-5">
+    <div class="containerCarousel mobile mb-5">
         <mdb-carousel [isControls]="false" [animation]="'slide'">
             <mdb-carousel-item *ngFor="let pack of myPetAdvises; let i = index">
                 <div class="containerCard" *ngFor="let pet of pack; let cardIndex = index">
@@ -18,7 +18,7 @@
                                 {{pet.data.name}}
                             </h2>
                             <p class="card-text">{{pet.data.description}}</p>
-                            <a [routerLink]="['/pet', pet.id]" class="btn btn-primary">+Info</a>
+                            <a [routerLink]="['/pet', pet.id]" class="btn btn-primary mb-1">+Info</a>
                         </div>
                     </div>
                 </div>

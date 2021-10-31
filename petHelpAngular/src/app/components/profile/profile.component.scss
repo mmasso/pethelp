@@ -1,0 +1,87 @@
+.btn{
+    color: white;
+    height: 50px;
+    width: max-content;
+    float: right;
+}
+
+.authBlock {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 9px 0 rgb(44 44 44 / 40%);
+    width: 70vw;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 80px 50px 50px;
+    position: relative;
+  }
+  
+  .displayTableCell{
+      padding-top: 200px;
+  }
+  
+  .formGroup {
+      margin-bottom: 10px;
+  }
+  
+  .displayTable{
+      background-color: #E1E2E1;
+      width: 100%;
+      height: 100%;
+  }
+
+  .containerCarousel{
+      margin-top: 100px;
+  }
+
+  .rowPets{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+      height: 42vh;
+      width: 65vw;
+      overflow-x: scroll;
+      overflow-y: hidden !important;
+  }
+
+  $card-width: 20vw;
+.card-body {
+    display: flex;
+    flex-flow: column;
+    align-content: space-between;
+    justify-content: space-evenly;
+    height: 15vh;
+    a{
+        width: 100px;
+        align-self: flex-end;
+    }
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card {
+    height: 40vh;
+    width: $card-width;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.404);
+}
+
+.containerCard {
+    width: auto;
+    padding: 0.5%;
+} 
+
+.card{
+    min-width: 300px!important;
+}
+
+.card-img-top {
+    height: 25vh;
+    overflow-y: hidden;
+    object-fit: cover !important;
+}

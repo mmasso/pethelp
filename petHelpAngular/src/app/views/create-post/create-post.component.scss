@@ -1,0 +1,61 @@
+.authBlock {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 9px 0 rgb(44 44 44 / 40%);
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 50px 30px 30px 50px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .displayTableCell h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+.displayTable {
+    background-color: #e1e2e1;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .container-list{
+        width: 280px;
+    }
+    .list{
+        width: 250px;
+    }
+    .authBlock{
+        padding-left: 10px;
+        height: 100%;
+        width: 90vw;
+    }
+    .col-2{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        font-size: 10px;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: 10px;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: 10px;
+    }
+    .displayTableCell{
+        padding-left: 1.5rem!important;
+    }
+
+    .col-10{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

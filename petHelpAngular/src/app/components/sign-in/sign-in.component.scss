@@ -47,6 +47,7 @@
 .buttonGroup{
     margin-top: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -61,4 +62,21 @@
 
 .googleBtn:hover{
     background-color: #E1E4E7;
+}
+
+.btn-block +.btn-block {
+ margin-top: 0;
+}
+
+button{
+height: 50px;
+width: max-content;
+}
+
+@media (max-width: 480px) {
+    .authBlock {
+        width: 300px;
+
+      }
+
 }

@@ -1,23 +1,56 @@
 <div class="displayTable">
-    <div class="displayTableCell p-5">
-      <div class="authBlock" *ngFor="let pet of myPetAdvises;">
-        <div class="containerGrid">
-            <div class="aaa">
-                <img class="imgPet" [src]="pet.data.image" alt="">
-            </div>
-            <div class="bbb">
+  <div class="displayTableCell p-5">
+    <div class="authBlock" *ngFor="let pet of myPetAdvises">
+      <div class="containerGrid">
+        <div class="image">
+          <img class="imgPet" [src]="pet.data.image" alt="" />
+        </div>
+        <div class="content">
+          <div class="text">
+            <h2>{{ pet.data.name }}</h2>
 
-                <h2>{{pet.data.name}}</h2>
-
-                <ul>
-                    <li>Name: {{pet.data.name}}</li>
-                    <li>Animal: {{pet.data.animalType}}</li>
-                    <li>Breed: {{pet.data.breed}}</li>
-                    <li>Contact: {{pet.data.contact}}</li>
-                </ul>
-                
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 name">Nombre</div>
+                <div class="col-md-6 data">
+                  {{ pet.data.name }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 name">Animal</div>
+                <div class="col-md-6 data">
+                  {{ pet.data.animalType }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 name">Raza</div>
+                <div class="col-md-6 data">
+                  {{ pet.data.breed }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 name">Contacto</div>
+                <div class="col-md-6 data">
+                  {{ pet.data.contact }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 name description">Descripción</div>
+                <div class="col-md-12 data descriptionData">
+                  {{ pet.data.description }}
+                </div>
+              </div>
             </div>
           </div>
+
+          <div class="maps-desktop">
+            <google-map height="35vh" width="100%"> </google-map>
+          </div>
+          <div class="maps-mobile">
+            <google-map height="35vh" width="70vw"> </google-map>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
