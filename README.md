@@ -50,10 +50,10 @@ Una vez tenemos definidos los requisitos funcionales de la aplicación, podremos
 
 En la sección de animales perdidos:
 
--Poner un aviso de animal perdido, con imágenes, características del animal y su geolocalización aproximada de donde se perdió.
--Poder interactuar con un mapa general para añadir posibles avistamiento o nuevas zonas de búsqueda
--Poder ver una manera de contactar con los dueños / creadores del aviso.
--Visualizar una lista / mapa con todos los avisos.
+* Poner un aviso de animal perdido, con imágenes, características del animal y su geolocalización aproximada de donde se perdió.
+* Poder interactuar con un mapa general para añadir posibles avistamiento o nuevas zonas de búsqueda
+* Poder ver una manera de contactar con los dueños / creadores del aviso.
+* Visualizar una lista / mapa con todos los avisos.
 
 Asimismo el sistema automáticamente deberá de:
 
@@ -67,9 +67,9 @@ En clockify se han imputado un total de 74horas y 10 minutos, con el añadido de
 
 El precio de todo el software usado para todo es gratuitio, excepto para:
 
--Google Firebase: Con un coste por uso, que planean ellos, para iniciar nuestra aplicación no es necesario.
--Canva Pro, 12€ mensuales. Para iconos.
--Billing de google maps API
+* Google Firebase: Con un coste por uso, que planean ellos, para iniciar nuestra aplicación no es necesario.
+* Canva Pro, 12€ mensuales. Para iconos.
+* Billing de google maps API
 
 ## Diagrama de componentes
 
