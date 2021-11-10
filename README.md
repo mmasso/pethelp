@@ -67,7 +67,11 @@ En clockify se han imputado un total de 74horas y 10 minutos, con el añadido de
 
 El precio de todo el software usado para todo es gratuitio, excepto para:
 
-Google Firebase: Con un coste por uso, que planean ellos, para iniciar nuestra aplicación no es necesario.
-Canva Pro, 12€ mensuales. Para iconos.
+-Google Firebase: Con un coste por uso, que planean ellos, para iniciar nuestra aplicación no es necesario.
+-Canva Pro, 12€ mensuales. Para iconos.
+-Billing de google maps API
 
+## Diagrama de componentes
+
+!(algo)[https://github.com/mmasso/pethelp/blob/main/doc/components.jpg]
 
