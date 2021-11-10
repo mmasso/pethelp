@@ -73,5 +73,5 @@ El precio de todo el software usado para todo es gratuitio, excepto para:
 
 ## Diagrama de componentes
 
-!(algo)[https://github.com/mmasso/pethelp/blob/main/doc/components.jpg]
+![doc](./doc/components.jpg)
 
