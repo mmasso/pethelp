@@ -58,3 +58,16 @@ En la sección de animales perdidos:
 Asimismo el sistema automáticamente deberá de:
 
 Activar un sistema de avisos de difusión mediante las principales redes sociales para poder dar a conocer la aplicación y dar más visibilidad a los avisos de animales perdidos o en adopción.
+
+## Coste/Precio Por hora
+
+En clockify se han imputado un total de 74horas y 10 minutos, con el añadido de la planificación por unos 30 horas. Cobrando a 23 euros la hora programada saldria a 1702€ más los costes de planificacion y desarrollo inicial, a 15€ la hora, unos 450€, saliendo a 2152€ el proyecto.
+
+## Precio del software.
+
+El precio de todo el software usado para todo es gratuitio, excepto para:
+
+Google Firebase: Con un coste por uso, que planean ellos, para iniciar nuestra aplicación no es necesario.
+Canva Pro, 12€ mensuales. Para iconos.
+
+
