@@ -12,8 +12,7 @@ export class ProfileComponent implements OnInit {
   myPetAdvises= [] as any;
   scrWidth: any;
   chunked: any;
-
-  constructor(fireStore: FirestoreService, public ngAuthService: AuthService) {
+  constructor(public fireStore: FirestoreService, public ngAuthService: AuthService) {
     fireStore.getAllPetAdvise().subscribe((advises) => {
       this.myPetAdvises = [];
       advises.forEach((document: any) => {
@@ -23,29 +22,11 @@ export class ProfileComponent implements OnInit {
           data: document.payload.doc.data()
         });}
       })
-      this.scrWidth = window.innerWidth;
-      if (this.scrWidth <= 425){
-        this.chunked = 1;
-      }
-      if (this.scrWidth > 425){
-        this.chunked = 2;
-      }
-      if (this.scrWidth >= 728){
-        this.chunked = 3;
-      }
-      if (this.scrWidth >= 1440){
-        this.chunked = 4;
-      }
-      this.myPetAdvises = this.chunk(this.myPetAdvises, this.chunked);
     })
   }
 
-  chunk(arr: any, chunkSize:any) {
-    let R = [];
-    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
-      R.push(arr.slice(i, i + chunkSize));
-    }
-    return R;
+  delete(id: any){
+    this.fireStore.deletePetAdviseByID(id);
   }
   
   ngOnInit(): void {

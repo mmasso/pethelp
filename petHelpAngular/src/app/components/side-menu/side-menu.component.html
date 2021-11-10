@@ -2,7 +2,7 @@
   
   <div class="sidebar">
     <div class="logo-details">
-      <i class="bx img-wrapper icon logo_name"><img src="../../../assets/Pet Help Icon.png" alt=""></i>
+      <i class="bx img-wrapper icon logo_name"><img src="../../../assets/Pet Help Icon.png" alt=""  routerLink="/home"></i>
       <i class='bx bx-menu' id="btn" (click)="menuBtnChange()"></i>
     </div>
     <ul class="nav-list">
@@ -32,14 +32,14 @@
        </a>
        <span class="tooltip">Perfil</span>
      </li>
-     <!--
      <li>
-       <a class="nav-item nav-link" routerLink="/alerts" routerLinkActive="active">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+       <a class="nav-item nav-link" routerLink="/alerts/createAlert" routerLinkActive="active">
+         <i class='bx bxl-gitlab' ></i>
+         <span class="links_name">Crear Aviso</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Crear Aviso</span>
      </li>
+     <!--
      <li>
        <a href="#">
          <i class='bx bx-folder' ></i>

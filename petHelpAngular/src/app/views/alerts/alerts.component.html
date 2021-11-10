@@ -1,15 +1,33 @@
 <div class="displayTable">
   <div class="displayTableCell p-5">
-      <h1>¿Donde se perdio mi mascota?</h1>
+    <h1>¿Donde se perdio mi mascota?</h1>
     <div class="authBlock">
       <div class="maps-desktop">
-        <google-map height="70vh" width="50vw"> </google-map>
+        <google-map height="70vh" width="50vw" [center]="center"  [zoom]="zoom">
+          <map-marker
+          *ngFor="let marker of markers"
+          [position]="marker.position"
+          [label]="marker.label"
+          [title]="marker.title"
+          [options]="marker.options"
+        ></map-marker>
+        </google-map>
       </div>
       <div class="maps-mobile">
-        <google-map height="35vh" width="70vw"> </google-map>
+        <google-map height="35vh" width="70vw" [center]="center"  [zoom]="zoom">
+          <map-marker
+          *ngFor="let marker of markers"
+          [position]="marker.position"
+          [label]="marker.label"
+          [title]="marker.title"
+          [options]="marker.options"
+        ></map-marker> 
+        </google-map>
       </div>
       <div class="container-list">
-        <div><h2 style="text-align: center;">Lista de animales perdidos</h2></div>
+        <div>
+          <h2 style="text-align: center">Lista de animales perdidos</h2>
+        </div>
         <div class="list-scroll">
           <ul *ngFor="let pet of myPetAdvises">
             <li class="list" [routerLink]="['/pet', pet.id]">
@@ -25,7 +43,7 @@
           </ul>
         </div>
 
-        <a style="float: right;"routerLink="/alerts/createAlert">
+        <a style="float: right" routerLink="/alerts/createAlert">
           <button type="button" class="btn btn-primary">Crear Aviso</button>
         </a>
       </div>

@@ -6,7 +6,7 @@
       <div class="container">
         <form [formGroup]="petAdviseForm" (ngSubmit)="onSubmit()">
           <div class="form-group row">
-            <label class="col-2 col-sm-12 col-form-label" for="animalName">Nombre</label>
+            <label class="col-2 col-form-label" for="animalName">Nombre</label>
             <div class="col-10">
               <input id="animalName" formControlName="animalName" placeholder="¿Como se llama tu mascota?" type="text"
                 required="required" class="form-control" required>
@@ -71,10 +71,18 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="location" class="col-2 col-form-label">Location</label>
+            <label for="lat" class="col-2 col-form-label">Latitud</label>
             <div class="col-10">
-              <input id="location" formControlName="location"
-                placeholder="Abra google maps, click izquierdo encima del mapa y copie la latitud y la longitud que obtendrá" type="text" required="required"
+              <input id="lat" formControlName="lat"
+                placeholder="Abra google maps, click izquierdo encima del mapa y copie la latitud que obtendrá" type="text" required="required"
+                class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lng" class="col-2 col-form-label">Longitud</label>
+            <div class="col-10">
+              <input id="lng" formControlName="lng"
+                placeholder="Abra google maps, click izquierdo encima del mapa y copie la longitud que obtendrá" type="text" required="required"
                 class="form-control" required>
             </div>
           </div>

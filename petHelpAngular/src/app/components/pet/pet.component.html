@@ -44,10 +44,26 @@
           </div>
 
           <div class="maps-desktop">
-            <google-map height="35vh" width="100%"> </google-map>
+            <google-map height="35vh" width="100%" [center]="center"  [zoom]="zoom">
+              <map-marker
+              *ngFor="let marker of markers"
+              [position]="marker.position"
+              [label]="marker.label"
+              [title]="marker.title"
+              [options]="marker.options"
+            ></map-marker>
+           </google-map>
           </div>
           <div class="maps-mobile">
-            <google-map height="35vh" width="70vw"> </google-map>
+            <google-map height="35vh" width="70vw" [center]="center"  [zoom]="zoom">
+              <map-marker
+              *ngFor="let marker of markers"
+              [position]="marker.position"
+              [label]="marker.label"
+              [title]="marker.title"
+              [options]="marker.options"
+            ></map-marker>
+           </google-map>
           </div>
         </div>
       </div>

@@ -28,21 +28,22 @@
         </button>
       </div>
       <div class="containerCarousel mobile mb-5">
-            <div class="rowPets" *ngFor="let pack of myPetAdvises; let i = index">
-                <div class="containerCard" *ngFor="let pet of pack; let cardIndex = index">
-                    <div class="card">
+            <div class="rowPets">
+                    <div class="card"  *ngFor="let pet of myPetAdvises; let cardIndex = index">
                         <img class="card-img-top" [src]="pet.data.image" alt="Card image cap">
                         <div class="card-body">
                             <h2 class="card-title">
                                 {{pet.data.name}}
                             </h2>
                             <p class="card-text">{{pet.data.description}}</p>
-                            <a [routerLink]="['/pet', pet.id]" class="btn btn-primary mb-1">Ver más</a>
+                            <div class="button-group">
+                              <a class="btn btn-danger mb-1" (click)="delete(pet.id)">Eliminar</a>
+                              <a [routerLink]="['/pet', pet.id]" class="btn btn-primary mb-1">Ver más</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                  </div>
               </div>
-    </div>
+        </div>
     </div>
   </div>
 </div>

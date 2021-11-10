@@ -12,6 +12,12 @@ export class PetComponent implements OnInit {
   readonly subscription;
   myPetAdvises: any;
   parameters: any;
+  markers = [] as any;
+  zoom = 12;
+  center = {
+    lat: 39.57756014685514,
+    lng: 2.6459507782795755
+  }
 
   constructor(fireStore: FirestoreService, private route : ActivatedRoute) {
 
@@ -29,6 +35,19 @@ export class PetComponent implements OnInit {
         });
       })
       this.myPetAdvises = [this.filterByName(this.myPetAdvises)];
+      this.myPetAdvises.forEach((element: any) => {
+        this.markers.push({
+          position: {
+            lat: parseFloat(element.data.lat),
+            lng: parseFloat(element.data.lng)
+          },
+          label: {
+            color: 'black',
+            text: element.data.name,
+          },
+          title: element.data.name
+        })
+      });
     })
   }
 

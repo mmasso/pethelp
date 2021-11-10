@@ -8,7 +8,8 @@ export interface PetAdvise {
     description: string;
     gender: string;
     image: string;
-    location: string;
+    lat: string;
+    lng: string;
     size: string;
     owner: string;
 }

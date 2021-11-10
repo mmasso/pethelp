@@ -23,7 +23,9 @@ export class FirestoreService {
     return this.firestore.collection('petAdvise').snapshotChanges()
   }
 
-  public deletePetAdviseByID(){}
+  public deletePetAdviseByID(id: any){
+    return this.firestore.collection('petAdvise').doc(id).delete()
+  }
 
 
 }
