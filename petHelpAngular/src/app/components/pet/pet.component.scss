@@ -1,0 +1,172 @@
+.authBlock {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 9px 0 rgb(44 44 44 / 40%);
+    width: 70vw;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 50px 30px 30px 50px;
+    position: relative;
+  }
+  
+  .containerGrid {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image { 
+    width: 40vw; 
+    height: 70vh;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    border-radius: 8px;
+
+    :hover{
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    }
+  }
+
+  .content { 
+    width: 26vw;
+    height: 70vh;
+  }
+  
+  .displayTable{
+    background-color: #E1E2E1;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.imgPet {
+    border-radius: 8px;
+    object-fit: cover !important;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.text h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4.5vw;
+    font-weight: 600;
+    text-align: center;
+    height: 10vh;
+}
+
+.text{
+  height: 35vh;
+  font-size: 1vw;
+}
+
+.container-fluid{
+  height: 25vh
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.row{
+  margin-bottom: 3%;
+  padding-bottom: 4px;
+  border-bottom: #E1E2E1 2px solid;
+  width: 100%;
+}
+
+.description{
+  margin-bottom: 3%;
+}
+
+.descriptionData{
+  padding-left: 25%;
+}
+
+.name{
+  padding-left: 10%;
+}
+
+.name{
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .displayTable{
+    height: 100%;
+  }
+  .displayTableCell{
+    background-color: #e1e2e1;
+  }
+  .image { 
+    height: 50vh;
+    width: 280px!important;
+  }
+  .containerGrid {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .content { 
+    width: 80vw;
+  }
+  .image { 
+    width: 80vw; 
+  }
+  .authBlock {
+    width: 80vw;
+  }
+  .text{
+    font-size: 12px;
+  }
+  .maps-desktop{
+    display: none;
+  }
+
+  .maps-mobile{
+    margin-left: 10px;
+  }
+
+  .authBlock {
+    height: 100%;
+    margin: 0 auto;
+  }
+  .descriptionData{
+    padding-left: 1%;
+  }
+  
+  .name{
+    padding-left: 2%;
+  }
+
+  .text h2{
+    margin-top: 25px;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    height: 5vh;
+}
+  .col-md-6{
+    width: 50%;
+  }
+  .col-md-12{
+    width: 50%;
+  }
+  .container-fluid{
+    width: 100%;
+  }
+}
+@media (min-width: 480px) {
+  .maps-mobile{
+    display: none;
+  }
+
+}

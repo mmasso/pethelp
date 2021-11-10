@@ -1,0 +1,13 @@
+.row-app{
+    display: flex;
+    flex-flow: nowrap row;
+}
+
+.column-menu{
+    height: 100vh;
+}
+
+.column-body{
+    width: 100vw;
+    height: 100vh;
+}
